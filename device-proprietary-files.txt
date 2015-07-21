@@ -27,12 +27,12 @@ etc/Handset_cal.acdb
 etc/Hdmi_cal.acdb
 etc/Headset_cal.acdb
 etc/Speaker_cal.acdb
-etc/fmas_eq.dat
-lib/hw/audio.motvr.default.so
+lib/hw/audio.primary.msm8084.so
 lib/hw/sound_trigger.primary.shamu.so
-lib/libflacencoder.so
-lib/libmotaudioutils.so
-lib/soundfx/libfmas.so
+lib/libaudioroute.so
+lib/libtinycompress.so
+lib/soundfx/libqcomvisualizer.so
+lib/soundfx/libqcomvoiceprocessing.so
 lib/soundfx/libspeakerbundle.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -42,28 +42,22 @@ vendor/lib/libcsd-client.so
 
 # Audio firmware
 vendor/firmware/acdb.mbn
-vendor/firmware/left.boost.music.config
 vendor/firmware/left.boost.music.eq
 vendor/firmware/left.boost_music_table.preset
 vendor/firmware/left.boost_n1b12.patch
 vendor/firmware/left.boost_n1c2.patch
-vendor/firmware/left.boost.ringtone.config
 vendor/firmware/left.boost.ringtone.eq
 vendor/firmware/left.boost_ringtone_table.preset
 vendor/firmware/left.boost.speaker
-vendor/firmware/left.boost.voice.config
 vendor/firmware/left.boost.voice.eq
 vendor/firmware/left.boost_voice_table.preset
-vendor/firmware/right.boost.music.config
 vendor/firmware/right.boost.music.eq
 vendor/firmware/right.boost_music_table.preset
 vendor/firmware/right.boost_n1b12.patch
 vendor/firmware/right.boost_n1c2.patch
-vendor/firmware/right.boost.ringtone.config
 vendor/firmware/right.boost.ringtone.eq
 vendor/firmware/right.boost_ringtone_table.preset
 vendor/firmware/right.boost.speaker
-vendor/firmware/right.boost.voice.config
 vendor/firmware/right.boost.voice.eq
 vendor/firmware/right.boost_voice_table.preset
 vendor/moto/audiomonitor/sensory/lts_en_us_9_5_2b.raw
@@ -104,6 +98,7 @@ vendor/moto/audiomonitor/sensory/svsid_triggerogn_ptbr_2_1.raw
 
 # Camera
 bin/mm-qcamera-daemon
+lib/libmm-qcamera.so
 vendor/lib/libactuator_lc898122_camcorder.so
 vendor/lib/libactuator_lc898122_camera.so
 vendor/lib/libactuator_lc898122.so
@@ -225,9 +220,6 @@ etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
 
-# Contacts adapter
--priv-app/BuaContactAdapter/BuaContactAdapter.apk
-
 # Diagnostic
 bin/diag_klog
 bin/diag_mdlog
@@ -236,25 +228,19 @@ bin/PktRspTest
 bin/ramdump
 bin/rundiag
 bin/test_diag
-etc/diag/mdm/FIT_V15_audio.cfg
-etc/diag/mdm/FIT_V15.cfg
+etc/diag/FIT_V12.cfg
+etc/diag/mdm/FIT_V12.cfg
 etc/diag/mdm/sensors_qxdm.cfg
 etc/diag/sensors_qxdm.cfg
 
 # DRM
 bin/qseecomd
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/liboemcrypto.so
 vendor/lib/librpmb.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libwvm.so
-vendor/lib/libWVphoneAPI.so
-vendor/lib/libWVStreamControlAPI_L1.so
 
 # DRM firmware
 vendor/firmware/widevine.b00
@@ -290,10 +276,12 @@ vendor/firmware/a420_pm4.fw
 
 # GPS
 etc/flp.conf
+etc/sap.conf
 lib/hw/gps.msm8084.so
 lib/libgps.utils.so
 lib/libloc_core.so
 lib/libloc_eng.so
+vendor/bin/gsiff_daemon
 vendor/lib/hw/activity_recognition.msm8084.so
 vendor/lib/hw/flp.msm8084.so
 vendor/lib/libgeofence.so
@@ -380,14 +368,13 @@ vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk
 bin/time_daemon
--vendor/lib/libtime_genoff.so
+vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 
 # Touch firmware
 vendor/firmware/atmel-a432-14061601-0102aa-shamu-p1.tdat
-vendor/firmware/atmel-a432-14103001-0103aa-shamu.tdat
+vendor/firmware/atmel-a432-14101503-0103aa-shamu.tdat
 
 #USB
 bin/port-bridge
@@ -420,12 +407,8 @@ etc/firmware/vpu.mbn
 etc/firmware/vpu.mdt
 
 # Voice recognition
-etc/permissions/com.motorola.triggerenroll.xml
--priv-app/TriggerEnroll/TriggerEnroll.apk
--priv-app/TriggerTrainingService/TriggerTrainingService.apk
 lib/librecoglib.so
 lib/libsupermodel.so
-lib/libtrainingcheck.so
 
 # Voice recognition firmware
 vendor/firmware/aonvr1.bin
