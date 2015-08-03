@@ -23,9 +23,6 @@ PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common TO stuff.
-$(call inherit-product, vendor/to/config/common_full_phone.mk)
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1440
 TARGET_SCREEN_WIDTH := 2560
